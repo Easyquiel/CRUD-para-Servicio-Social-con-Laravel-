@@ -7,7 +7,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\SocialServiceStudent; // Agrega este use si no existe
+use App\Models\SocialServiceStudent; 
 
 class User extends Authenticatable
 {
@@ -23,7 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin', // asegúrate de incluirlo
+        'is_admin', 
     ];
 
     /**
