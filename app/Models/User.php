@@ -7,7 +7,8 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Models\SocialServiceStudent; 
+use App\Models\SocialServiceStudent;
+use App\Models\Event;
 
 class User extends Authenticatable
 {
@@ -52,5 +53,15 @@ class User extends Authenticatable
     public function socialService()
     {
         return $this->hasOne(SocialServiceStudent::class);
+    }
+
+    public function organizedEvents()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class)->withPivot('attendance');
     }
 }

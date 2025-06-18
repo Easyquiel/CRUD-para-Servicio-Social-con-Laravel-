@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Event;
 
 class SocialServiceStudent extends Model
 {
@@ -25,5 +26,10 @@ class SocialServiceStudent extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
     }
 }
